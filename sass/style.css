@@ -1,0 +1,25 @@
+@import url("https://fonts.googleapis.com/css?family=Indie+Flower|Nanum+Pen+Script");
+body {
+  background-color: #ccc; }
+
+.container {
+  margin: 0 auto;
+  width: 300px;
+  max-width: 100%;
+  text-align: center; }
+
+h1 {
+  font-family: "Nanum Pen Script", cursive;
+  font-size: 30px;
+  color: #a00606; }
+
+h2 {
+  color: indigo;
+  font-size: 25px; }
+
+p {
+  font-family: "Nanum Pen Script", cursive;
+  font-size: 20px;
+  color: darkslategray; }
+
+/*# sourceMappingURL=style.css.map */

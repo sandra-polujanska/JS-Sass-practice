@@ -1,0 +1,5 @@
+autoprexifer --browsers BROWSERS ----> add prefixes for selected browsers
+autoprefixer --clean ----> remove all known prefixes
+
+nu-html-checker --version index.html ----> output the version number
+nu-html-checker --formatter index.html  -----> Choose the formatter to use.

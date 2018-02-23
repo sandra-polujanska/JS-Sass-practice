@@ -15,17 +15,19 @@
     "rimraf": "^2.6.2"
   },
   "scripts": {
-    "test": "npm run test:html",
+    "test": "npm-run-all test:*",
     "test:html": "globstar nu-html-checker *.html",
-    "build": "npm run build:clean && npm run build:sass && npm run build:autoprefixer && npm run test",
+    "build": "npm-run-all build:* test",
     "build:clean": "rm -rf css/style.css",
     "build:sass": "node-sass --output-style compact -o css sass",
     "build:autoprefixer": "autoprefixer-cli css/style.css",
     "build-dev:sass": "node-sass --output-style expanded --source-map true -o css sass",
-    "watch": "npm run watch:browsersync",
+      
+    "watch": "npm-run-all build -p watch:*",
     "watch:browsersync": "node_modules/.bin/browser-sync start --server --files",
-    "watch:sass": "node-sass --output-style expanded --source-map true -o css sass --watch",
-    "watch:autoprefixer": "onchange -d 100 css/style.css -- autoprefixer-cli -o css/style.prefixed.css css/style.css"
+    "watch:sassprefixer": "onchange -d 100 sass/style.scss -- npm-run-all watch:* ",
+      "watch:sass": "node-sass --output-style expanded --source-map true -o css sass",
+      "watch:autoprefixer": "autoprefixer-cli -o css/style.prefixed.css css/style.css"
   },
   "repository": {
     "type": "git",
